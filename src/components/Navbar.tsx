@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
           <a href="#home" className="flex items-center space-x-2">
             <Briefcase className="w-7 h-7 text-primary-600 dark:text-primary-400" />
             <span className="text-xl font-semibold tracking-tight">
-              David.dev
+              CODEwithESE
             </span>
           </a>
         </motion.div>
@@ -63,13 +63,16 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="list-none"
               >
-                <button
-                  onClick={() => handleMenuClick(item.path)}
-                  className="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-transform duration-200 transform hover:-translate-y-1"
-                >
-                  {item.label}
-                </button>
+                <div>
+                  <button
+                    onClick={() => handleMenuClick(item.path)}
+                    className="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-transform duration-200 transform hover:-translate-y-1"
+                  >
+                    {item.label}
+                  </button>
+                </div>
               </motion.li>
             ))}
           </ul>
