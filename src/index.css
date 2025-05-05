@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#0a0a0f] text-gray-200 dark:bg-[#0a0a0f] dark:text-gray-200;
+  @apply bg-[length:550px_550px,350px_350px,250px_250px];
+  @apply bg-[position:0_0,40px_60px,130px_270px];
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px);
+}
+
+body:not(.dark) {
+  @apply bg-[whitesmoke] text-blue-600;
+  background-image: radial-gradient(
+      #60a5fa,
+      rgba(96, 165, 250, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(#60a5fa, rgba(96, 165, 250, 0.15) 1px, transparent 30px),
+    radial-gradient(#60a5fa, rgba(96, 165, 250, 0.1) 2px, transparent 40px);
+}
+
+.star {
+  @apply absolute rounded-full bg-white dark:bg-white;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.star:not(.dark) {
+  @apply bg-blue-400;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 2s;
+}
+
+.star:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.star:nth-child(5n) {
+  animation-delay: 3s;
+}
+
+button.cta {
+  @apply bg-yellow-400 text-black font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition-colors dark:bg-yellow-400 dark:hover:bg-yellow-500;
+}
+
+button.cta:not(.dark) {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#13131f] dark:bg-[#13131f];
+}
+
+::-webkit-scrollbar-track:not(.dark) {
+  @apply bg-gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-yellow-400 rounded-full dark:bg-yellow-400;
+}
+
+::-webkit-scrollbar-thumb:not(.dark) {
+  @apply bg-blue-500;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-yellow-500 dark:bg-yellow-500;
+}
+
+::-webkit-scrollbar-thumb:hover:not(.dark) {
+  @apply bg-blue-600;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
