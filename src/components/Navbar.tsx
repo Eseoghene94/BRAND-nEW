@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { navItems } from "../data/navItems";
-import { Menu, X, Moon, Sun, Briefcase } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
@@ -40,14 +40,18 @@ const Navbar: React.FC = () => {
   return (
     <nav className={navbarClasses}>
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center text-yellow-800 dark:text-yellow-100">
-        {/* Brand */}
+        {/* Brand with custom logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <a href="#home" className="flex items-center space-x-2">
-            <Briefcase className="w-7 h-7 text-primary-600 dark:text-primary-400" />
+            <img
+              src="/logo.jpg" // Your logo in the public folder
+              alt="CODEwithESE Logo"
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-xl font-semibold tracking-tight">
               CODEwithESE
             </span>
@@ -68,7 +72,7 @@ const Navbar: React.FC = () => {
                 <div>
                   <button
                     onClick={() => handleMenuClick(item.path)}
-                    className="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-transform duration-200 transform hover:-translate-y-1"
+                    className="text-base font-medium hover:text-yellow-600 dark:hover:text-yellow-400 transition-transform duration-200 transform hover:-translate-y-1"
                   >
                     {item.label}
                   </button>
@@ -135,7 +139,7 @@ const Navbar: React.FC = () => {
                 >
                   <button
                     onClick={() => handleMenuClick(item.path)}
-                    className="block w-full text-left py-2 px-3 text-yellow-800 dark:text-yellow-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-md transition"
+                    className="block w-full text-left py-2 px-3 text-yellow-800 dark:text-yellow-200 hover:text-yellow-600 dark:hover:text-yellow-400 rounded-md transition"
                   >
                     {item.label}
                   </button>
