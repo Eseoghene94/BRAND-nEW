@@ -49,7 +49,7 @@ const Resume: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-16">
+    <div className="container mx-auto px-6 py-2">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -208,6 +208,7 @@ const Resume: React.FC = () => {
               >
                 <button
                   onClick={closeModal}
+                  title="Close"
                   className="absolute right-4 top-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
                 >
                   <X className="w-5 h-5 text-black dark:text-white" />
